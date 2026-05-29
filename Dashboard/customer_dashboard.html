@@ -382,6 +382,17 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
+
+    /* Warna untuk Quick Actions Icons */
+    .action-icon.blue { background: var(--primary-lt); color: var(--primary); }
+    .action-icon.green { background: var(--green-lt); color: var(--green); }
+    .action-icon.purple { background: var(--purple-lt); color: var(--purple); }
+    .action-icon.orange { background: var(--accent-lt); color: var(--accent); }
+
+    .metric-icon.cart, 
+    .metric-icon.transit, 
+    .metric-icon.credit, 
+    .metric-icon.outstanding { background: var(--primary-lt); color: var(--primary); }
     .action-info { flex: 1; min-width: 0; }
     .action-title { font-size: 13px; font-weight: 600; color: var(--text-dark); }
     .action-desc { font-size: 11px; color: var(--text-light); margin-top: 1px; }
@@ -416,7 +427,7 @@
       <img src="assets/dashboard.svg" class="nav-icon" width="20" height="20"> Dashboard
     </a>
     <a class="nav-item" href="catalog.html">
-      <img src="assets/inventory.svg" class="nav-icon" width="20" height="20"> Browse Catalog
+      <img src="assets/katalog.svg" class="nav-icon" width="20" height="20"> Browse Catalog
     </a>
     <a class="nav-item" href="cart.html">
       <img src="assets/purchase.svg" class="nav-icon" width="20" height="20"> My Cart
@@ -480,8 +491,8 @@
           <h1>Selamat datang, Budi Santoso</h1>
           <p>Belanja kebutuhan bisnis Anda dengan mudah dari PT Mitra Distribusi</p>
         </div>
-        <button class="btn-primary">
-          Mulai Belanja <img src="assets/purchase.svg" width="14" height="14" style="filter: invert(36%) sepia(85%) saturate(1214%) deg(224deg);">
+        <button class="btn-primary" onclick="goToCatalog()">
+          Mulai Belanja <img src="assets/katalog.svg" width="14" height="14" style="filter: invert(36%) sepia(85%) saturate(1214%) hue-rotate(224deg);">
         </button>
       </div>
 
@@ -494,7 +505,7 @@
             <div class="metric-icon cart">
               <img src="assets/purchase.svg" width="20" height="20">
             </div>
-            <span class="metric-badge">Cart kosong</span>
+            <span class="metric-badge red">Cart kosong</span>
           </div>
           <div class="metric-body">
             <label>Items in Cart</label>
@@ -520,7 +531,7 @@
         <div class="metric-card">
           <div class="metric-header">
             <div class="metric-icon credit">
-              <img src="assets/report.svg" width="20" height="20">
+              <img src="assets/Credit.svg" width="20" height="20">
             </div>
             <span class="metric-badge green">98% tersedia</span>
           </div>
@@ -534,7 +545,7 @@
         <div class="metric-card">
           <div class="metric-header">
             <div class="metric-icon outstanding">
-              <img src="assets/sales.svg" width="20" height="20">
+              <img src="assets/Out.svg" width="20" height="20">
             </div>
             <span class="metric-badge red">2 invoice due</span>
           </div>
@@ -616,8 +627,8 @@
           
           <!-- Action 1: Browse Katalog -->
           <a href="catalog.html" class="action-item">
-            <div class="action-icon">
-              <img src="assets/inventory.svg" width="18" height="18">
+            <div class="action-icon blue">
+              <img src="assets/katalog.svg" width="18" height="18">
             </div>
             <div class="action-info">
               <div class="action-title">Browse Katalog</div>
@@ -627,7 +638,7 @@
 
           <!-- Action 2: Lihat Keranjang -->
           <a href="cart.html" class="action-item">
-            <div class="action-icon">
+            <div class="action-icon green">
               <img src="assets/purchase.svg" width="18" height="18">
             </div>
             <div class="action-info">
@@ -638,23 +649,23 @@
 
           <!-- Action 3: Lacak Pesanan -->
           <a href="my-orders.html" class="action-item">
-            <div class="action-icon">
+            <div class="action-icon purple">
               <img src="assets/order.svg" width="18" height="18">
             </div>
             <div class="action-info">
               <div class="action-title">Lacak Pesanan</div>
-              <div class="action-desc">Cek status pengiriman real-time</div>
+              <div class="action-desc">Cek status pengiriman</div>
             </div>
           </a>
 
           <!-- Action 4: Bayar Tagihan -->
           <a href="invoices.html" class="action-item">
-            <div class="action-icon">
-              <img src="assets/report.svg" width="18" height="18">
+            <div class="action-icon orange">
+              <img src="assets/invoices.svg" width="18" height="18">
             </div>
             <div class="action-info">
               <div class="action-title">Bayar Tagihan</div>
-              <div class="action-desc">Kelola invoice & jatuh tempo</div>
+              <div class="action-desc">Kelola invoice & Credit</div>
             </div>
           </a>
 
@@ -665,6 +676,13 @@
 
   </main>
 </div><!-- /main -->
+
+<script>
+    // Fungsi untuk navigasi
+    function goToCatalog() {
+        window.location.href = 'catalog.html';
+    }
+</script>
 
 </body>
 </html>
